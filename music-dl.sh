@@ -3,10 +3,15 @@
 # Display help if no arguments are provided or if only --help or -h are provided
 if [ $# -eq 0 ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
     printf "\nUsage: $0 <folder> <URL> [--playlist]\n\n"
+    printf "  A simple wrapper for \`yt-dlp\` that only downloads audio from YouTube.\n"
+    printf "  Can be made to download a whole playlist with the --playlist flag. MUST be third argument, if at all.\n"
+    printf "  If downloading a playlist, supply the URL to the playlist itself, not just a video in the playlist.\n\n"
+    printf "  Requires \`yt-dlp\`, \`ffmpeg\` and \`ffprobe\` to be installed in your PATH.\n\n"
     printf "    folder             Where to save the file(s)\n"
     printf "    URL                Youtube URL\n"
     printf "    --playlist         download playlist\n"
-    exit 1
+    printf "    --help, -h         Show this help message and exit\n"
+    exit 0
 fi
 
 printf "\n"
